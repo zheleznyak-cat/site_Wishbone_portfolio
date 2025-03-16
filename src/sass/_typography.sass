@@ -1,0 +1,55 @@
+$font-size-nav: 1.5rem
+$font-size-paragraph: 1.6rem
+
+.paragraph
+  font-size: $font-size-paragraph
+  line-height: 2.4rem
+    
+.title-1
+  font-size: 6.4rem
+  font-weight: 400
+  line-height: 7.4rem
+  // @include respond(tab-land)
+  //   font-size: 5.2rem
+  //   color: red
+
+.title-2
+  font-size: 3.9rem
+  font-weight: 400
+  line-height: 4.2rem
+
+.title-3
+  font-size: 3.2rem
+  font-weight: 400
+  line-height: 3.8rem
+
+.title-5
+  font-size: 1.7rem
+  font-weight: 400
+  line-height: 2rem
+
+.title-6
+  font-size: 1.4rem
+  line-height: 2
+  letter-spacing: .2rem
+  text-transform: uppercase
+  font-weight: 200
+
+
+.modif-mt100px
+  margin-top: 10rem
+.modif-mb100px
+  margin-bottom: 10rem
+  
+
+@mixin link
+  text-decoration: none
+  font-size: $font-size-paragraph
+  cursor: pointer
+  letter-spacing: 0.04rem
+  line-height: 2.4rem
+  color: $color-brown-dark
+  &:hover
+    text-decoration: underline blue
+    transform: translateY(1px)
+

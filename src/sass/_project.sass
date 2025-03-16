@@ -1,0 +1,130 @@
+.project
+  background-color: $color-gray-ultra2-light
+  grid-column: full-start / full-end
+  display: grid
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] ) [center-end] minmax(6rem, 1fr) [full-end]
+  padding-top: 11.3rem
+  padding-bottom: 10rem
+
+  &_title
+    grid-column: full-start / full-end
+    text-align: center
+
+
+  &_h2
+    color: $color-brown-dark
+  &_p
+    color: $color-brown-light
+    max-width: 60rem
+    margin: 0 auto
+    margin-top: 1.5rem
+  &_cards
+    grid-column: center-start / center-end
+    margin-top: 4rem
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 1.5rem
+    @include respond(phone)
+        grid-template-columns: repeat(1, 1fr)
+    
+  &_card
+    position: relative
+
+    &_h6
+      color: $color-brown-dark
+      position: absolute
+      top: 4rem
+      left: 4rem
+      opacity: 0
+      transition: opacity 0.4s ease
+    &_h4
+      position: absolute
+      color: $color-brown-middle
+      font-size: 2.3rem
+      line-height: 3rem
+      font-weight: 400
+      top: 6rem
+      left: 4rem
+      opacity: 0
+      transition: opacity 0.4s ease
+
+  &_title-a
+    @include link
+    
+  &_title-a-box
+    grid-column: full-start / full-end
+    margin: 4rem auto
+    text-align: center
+    transition: 0.2s
+    &:hover
+      transform: translateY(2px)
+
+.card1
+  height: 46rem
+  background: $color-brown-middle
+  background-image: url("../img/project1.png")
+  background-repeat: no-repeat
+  background-size: cover
+.card2
+  height: 46rem
+  background: $color-brown-middle
+  background-image: url("../img/project2.png")
+  background-repeat: no-repeat
+  background-size: cover
+.card3
+  height: 46rem
+  background: $color-brown-middle
+  background-image: url("../img/project3.png")
+  background-repeat: no-repeat
+  background-size: cover
+
+.cards_btn
+  position: absolute
+  width: 15.5rem
+  text-align: center
+  top: 38rem
+  left: 4rem
+  opacity: 0
+  transition: opacity 0.4s ease
+
+  &, &:link, &:visited
+    color: $color-white
+    padding: 1.1rem 2rem
+    background: $color-brown-dark
+    border-radius: 1.5rem
+    transition: all .3s
+    position: relative
+    font-size: $font-size-paragraph
+    border: none
+    text-decoration: none
+    // @include respond(tab-land)
+    //   font-size: 1.8rem
+    //   padding: 1.5rem 3.7rem
+    // @include respond(tab-port)
+    //   padding: 2rem 5rem
+
+  &:hover
+    transform: translateY(-.4rem)
+    &::after
+      opacity: 0
+      transform: scaleX(1.5) scaleY(1.7)
+  &:active
+    transform: translateY(-.2rem)
+  &::after
+    content: ""
+    background: $color-brown-dark
+    width: 100%
+    height: 100%
+    border-radius: 1.5rem
+    display: inline-block
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    transition: all .4s
+  &_animated
+    animation: BtnToUp .5s ease-out .7s
+    animation-fill-mode: backwards
+.active
+  opacity: 1
+

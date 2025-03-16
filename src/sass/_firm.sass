@@ -1,0 +1,50 @@
+.firm
+  background-color: $color-white
+  padding: 10rem 0
+  grid-column: col-start 2 / col-start 8
+  display: grid
+  grid-template-columns: repeat(6, 1fr)
+
+  &_title
+    grid-column: 1 / 2
+    color: $color-brown-middle
+  &_box
+    grid-column: 3 / -1
+    display: grid
+    grid-template-rows: repeat(3, 1fr)
+    gap: 1rem
+    color: $color-brown-middle
+  &_p1
+    grid-row: 1 / 2
+  &_p2
+    grid-row: 2 / 3
+  &_p3
+    grid-row: 3 / 4
+
+
+  &_img-partner, &_sign_h5, &_sign_h6
+    transition: scale .3s ease
+
+  &_partner
+    display: flex
+    margin-top: 1rem
+
+  &_img-partner
+    display: fixed
+    height: 8.4rem
+    width: auto
+
+  &_sign
+    margin-left: 2rem
+    align-self: center
+    margin-bottom: 2rem
+    &_h5
+      font-size: 1.7rem
+      line-height: 2.6rem
+      font-weight: 400
+      color: $color-brown-dark
+    &_h6
+      font-size: 1.4rem
+      line-height: .8rem
+      font-weight: 300
+      color: $color-brown-light

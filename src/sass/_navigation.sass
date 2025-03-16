@@ -1,0 +1,211 @@
+.navigation
+  background-color: $color-white
+  grid-column: full-start / full-end
+  display: grid
+  grid-template-columns: repeat(18, 1fr)
+  position: relative
+
+  &_img
+    height: 1.9rem
+    width: 22rem
+    grid-column: 3 / 5
+    align-self: center
+  
+  &__nav
+    grid-column: 10 / 15
+    align-self: center
+    @include respond(tab-land)
+      display: none
+    
+  &__list
+    display: flex
+    list-style-type: none
+    justify-content: space-around
+    
+  &__link
+    text-decoration: none
+    list-style-type: none
+    font-size: $font-size-nav
+    color: $color-brown-dark
+    cursor: pointer
+    &:hover
+      text-decoration: underline blue
+
+  &__item
+    transition: 0.2s
+    &:hover
+      transform: translateY(1px)
+
+.btn
+  align-self: center
+  grid-column: 16 / 18
+  width: 15.5rem
+  text-align: center
+  &, &:link, &:visited
+    color: $color-white
+    padding: 1.1rem 2rem
+    background: $color-brown-dark
+    border-radius: 1.5rem
+    transition: all .3s
+    position: relative
+    font-size: $font-size-paragraph
+    border: none
+    text-decoration: none
+    @include respond(tab-land)
+      display: none
+    // @include respond(tab-land)
+    //   font-size: 1.8rem
+    //   padding: 1.5rem 3.7rem
+    // @include respond(tab-port)
+    //   padding: 2rem 5rem
+
+  &:hover
+    transform: translateY(-.4rem)
+    &::after
+      opacity: 0
+      transform: scaleX(1.5) scaleY(1.7)
+  &:active
+    transform: translateY(-.2rem)
+  &::after
+    content: ""
+    background: $color-brown-dark
+    width: 100%
+    height: 100%
+    border-radius: 1.5rem
+    display: inline-block
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    transition: all .4s
+  &_animated
+    animation: BtnToUp .5s ease-out .7s
+    animation-fill-mode: backwards
+
+// Меню бургер
+.navigation-hidden
+  
+  display: none
+  @include respond(tab-land)
+    display: block
+
+  &__toggle
+    display: none
+
+  &__button
+    position: fixed
+    background-color: $color-brown-dark
+    height: 7rem
+    width: 7rem
+    text-align: center
+    border-radius: 50%
+    top: 1rem
+    left: 80rem
+    z-index: 200
+    @include respond(phone)
+      left: 68rem
+
+  &__background
+    width: 1.2rem
+    height: 4rem
+    border-radius: 1rem
+    background: $color-white
+    position: fixed
+    top: 1.2rem
+    left: 83rem
+    z-index: 100
+    transition: all .4s
+    @include respond(phone)
+      left: 70.5rem
+    
+  &__nav
+    height: 100vh
+    width: 100%
+    position: fixed
+    top: 0
+    right: 0
+    z-index: 150
+    opacity: 0
+    width: 0
+    transition: all 1s
+  &__list
+    position: fixed
+    top: 11rem
+    left: 80.5rem
+    list-style: none
+    @include respond(phone)
+      left: 68rem
+  &__item
+    margin-top: .8rem
+  &__link
+    text-decoration: none
+    list-style-type: none
+    font-size: $font-size-nav
+    color: $color-brown-dark
+    cursor: pointer
+    &:hover
+      text-decoration: underline blue
+  &__btn
+    position: fixed
+    top: 30rem 
+    left: 76rem
+    width: 15.5rem
+    z-index: 400
+    @include respond(phone)
+      left: 64rem
+    &, &:link, &:visited
+      color: $color-white
+      padding: 1.1rem 2rem
+      background: $color-brown-dark
+      border-radius: 1.5rem
+      font-size: $font-size-paragraph
+      border: none
+      text-decoration: none
+    // @include respond(tab-land)
+    //   font-size: 1.8rem
+    //   padding: 1.5rem 3.7rem
+    // @include respond(tab-port)
+    //   padding: 2rem 5rem
+
+    &:hover
+      top: 30.4rem
+  
+  &__toggle:checked ~ &__background
+    transform: scale(20)
+  &__toggle:checked ~ &__nav
+    opacity: 1
+    width: 100%
+
+  &__icon
+    position: relative
+    margin-top: 3.5rem
+    &,
+    &::before,
+    &::after
+      width: 3rem
+      height: .2rem
+      background: $color-white
+      display: inline-block
+    &::before,
+    &::after
+      content: ""
+      position: absolute
+      left: 0
+      transition: all .2s
+    &::before
+      top: -.8rem
+    &::after
+      top: .8rem
+    &__toggle:hover &__icon::before
+      top: .3rem
+  &__button:hover &__icon::after
+    top: .8rem
+  &__toggle:checked + &__button &__icon
+    background: transparent
+  &__toggle:checked + &__button &__icon::before
+    top: 0
+    transform: rotate(135deg)
+
+  &__toggle:checked + &__button &__icon::after
+    top: 0
+    transform: rotate(-135deg)

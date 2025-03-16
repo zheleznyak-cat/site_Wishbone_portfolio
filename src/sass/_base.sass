@@ -1,0 +1,58 @@
+$color-brown-dark: #1B1A1A
+$color-brown-middle: #403E3B
+$color-brown-light: #645C55
+
+$color-white: #FFFFFF
+
+$color-gray-dark: #1B1A1A
+$color-gray-middle: #CEC4BC
+$color-gray-light: #ECE7E4
+$color-gray-ultra2-light: #F7F7F7
+$color-gray-ultra-light: #E5E5E5
+
+
+*, ::after, ::before
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    font-size: 62.5%
+
+body
+    font-family: "Poppins", serif
+    font-weight: 400
+    font-style: normal
+    color: $color-brown-middle
+
+.container
+    display: grid
+    grid-template-rows: 9rem 60vh min-content 35vw min-content 35vw min-content 35vw repeat(4, min-content)
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] ) [center-end] minmax(6rem, 1fr) [full-end]
+
+@mixin respond($braekpoint)
+    @if $braekpoint == phone
+        @media only screen and (max-width: 600px)
+            @content
+
+    @if $braekpoint == tab-port
+        @media only screen and (max-width: 900px)
+            @content
+
+    @if $braekpoint == tab-land
+        @media only screen and (max-width: 1100px)
+            @content
+
+    @if $braekpoint == big-screen
+        @media only screen and (min-width: 1800px)
+            @content
+
+html
+    @include respond(tab-land)
+        font-size: 55%
+    @include respond(tab-port)
+        font-size: 40%
+    @include respond(phone)
+        font-size: 30%
+    @include respond(big-screen)
+        font-size: 75%

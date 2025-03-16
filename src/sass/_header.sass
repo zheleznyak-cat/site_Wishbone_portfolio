@@ -1,0 +1,38 @@
+.header
+  background: linear-gradient(to right, $color-gray-light 50vw, transparent 50vw), url("../img/header.png")
+  background-size: cover
+  background-position: right
+  background-repeat: no-repeat
+  grid-column: full-start / full-end
+  display: grid
+  grid-template-columns: repeat(10, 1fr)
+  @include respond(phone)
+    background: linear-gradient(to bottom, $color-gray-light 25%, transparent 25%), url("../img/header.png")
+
+  &_title
+    grid-column: 2 / 5
+    align-self: center
+    @include respond(phone)
+      grid-column: 5 / 5
+      align-self: flex-start
+      margin-top: 5rem
+
+  &_title-6
+    margin-bottom: 1rem
+    color: $color-brown-light
+
+  &_title-1
+    margin-bottom: 1.3rem
+    color: $color-brown-dark
+
+  &_title-p
+    margin-bottom: 3rem
+    color: $color-brown-middle
+
+  &_title-a
+    @include link
+    
+  &_title-a-box
+    transition: 0.2s
+    &:hover
+      transform: translateY(2px)
