@@ -7,15 +7,19 @@
   display: grid
   grid-template-columns: repeat(10, 1fr)
   @include respond(phone)
-    background: linear-gradient(to bottom, $color-gray-light 25%, transparent 25%), url("../img/header.png")
+    background: linear-gradient(to bottom, $color-gray-light 50%, transparent 50%), url("../img/header.png")
 
   &_title
     grid-column: 2 / 5
     align-self: center
+    @include respond(tab-port)
+      margin-left: -3rem
+
     @include respond(phone)
       grid-column: 5 / 5
       align-self: flex-start
       margin-top: 5rem
+      margin-left: 0
 
   &_title-6
     margin-bottom: 1rem

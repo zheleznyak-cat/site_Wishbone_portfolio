@@ -27,10 +27,14 @@ body
 
 .container
     display: grid
-    grid-template-rows: 9rem 70vh min-content 35vw min-content 35vw min-content 35vw repeat(4, min-content)
+    grid-template-rows: 9rem 85vh min-content 35vw min-content 35vw min-content 35vw repeat(4, min-content)
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] ) [center-end] minmax(6rem, 1fr) [full-end]
 
 @mixin respond($braekpoint)
+    @if $braekpoint == phone-mini
+        @media only screen and (max-width: 470px)
+            @content
+
     @if $braekpoint == phone
         @media only screen and (max-width: 600px)
             @content

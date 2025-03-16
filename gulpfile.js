@@ -12,6 +12,7 @@ gulp.task("server", function () {
     server: {
       baseDir: "dist",
     },
+    browser: "chrome", //чтобы открывался в googl chrom
   });
 
   gulp.watch("src/*.html").on("change", browserSync.reload);

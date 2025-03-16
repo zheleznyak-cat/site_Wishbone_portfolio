@@ -103,7 +103,9 @@
     left: 80rem
     z-index: 200
     @include respond(phone)
-      left: 68rem
+      left: 85rem
+    @include respond(phone-mini)
+      left: 60rem
 
   &__background
     width: 1.2rem
@@ -116,7 +118,9 @@
     z-index: 100
     transition: all .4s
     @include respond(phone)
-      left: 70.5rem
+      left: 87rem
+    @include respond(phone-mini)
+      left: 62rem
     
   &__nav
     height: 100vh
@@ -134,7 +138,9 @@
     left: 80.5rem
     list-style: none
     @include respond(phone)
-      left: 68rem
+      left: 85rem
+    @include respond(phone-mini)
+      left: 60rem
   &__item
     margin-top: .8rem
   &__link
@@ -152,7 +158,9 @@
     width: 15.5rem
     z-index: 400
     @include respond(phone)
-      left: 64rem
+      left: 81rem
+    @include respond(phone-mini)
+      left: 55.5rem
     &, &:link, &:visited
       color: $color-white
       padding: 1.1rem 2rem
